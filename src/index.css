@@ -1,13 +1,527 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+  font-family:monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace; */
+    font-family:monospace;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.d-none{
+  display: none;
+}
+
+.completion-panel, .settings-panel{
+  padding: 30px;
+  background: #f9f9f9;
+}
+
+.glassNum{
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.btnSave{
+  width: 100%;
+  max-width: 160px;
+  margin-top: 10px;
+  background: #F9F9F9;
+  border: none;
+  border: 1px solid #cacaca;
+  padding: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+  font-family: monospace;
+  color: black;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 132px;
+}
+
+h1, h2{
+  font-family:monospace;
+  text-transform: uppercase;
+}
+
+#main {
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+    width:450px;
+    height:450px;
+}
+
+#glass {
+	position:absolute;
+	width:250px;
+	height:400px;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	top:50%;
+	left:50%;
+}
+
+.glassLines {
+	position:absolute;
+	background:white;
+	height:400px;
+}
+
+#glassLine1 {
+	width:10px;
+	transform:rotate(175deg);
+	box-shadow: 20px 1px 0 20px #f0f0f0; /* if you ask how I hid the part of the water that's supposed to go outsize the glass, It's the box-shadow with the same color as the background and has no blur */
+}
+#glassLine2 {
+	width:10px;
+	transform:rotate(185deg);
+	right:0%;
+	box-shadow: -20px 1px 0 20px #f0f0f0;
+}
+#glassLine3 {
+	width:210px;
+	transform:rotate(0deg);
+	right:8.5%;
+	height:10px;
+	bottom:0%;
+}
+
+.water_hundred_drink {
+	position:absolute;
+	/* background:#00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+	height:370px;
+	width:270px;
+	left: -3.9%;
+	bottom:0%;
+}
+.water_hundred_fill {
+	position:absolute;
+	/* background:#00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+	height:370px;
+	width:270px;
+	left: -3.9%;
+	bottom:0%;
+    animation-name:fill_100;
+	animation-duration:1s; 
+} @keyframes fill_100{
+	0%{height:296px;}
+	100%{height:370px;}
+}
+
+.water_eighty_drink {
+	position:absolute;
+	/* background:#00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+	height:296px;
+	width:270px;
+	left: -3.9%;
+	bottom:0%;
+	animation-name:drink_80;
+	animation-duration:1s; 
+} @keyframes drink_80{
+	0%{height:370px;}
+	100%{height:296px;}
+}
+.water_eighty_fill {
+	position:absolute;
+	/* background:#00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+	height:296px;
+	width:270px;
+	left: -3.9%;
+	bottom:0%;
+	animation-name:fill_80;
+	animation-duration:1s; 
+} @keyframes fill_80{
+	0%{height:222px;}
+	100%{height:296px;}
+}
+
+.water_sixty_drink {
+	position:absolute;
+	/* background:#00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+	height:222px;
+	width:270px;
+	left: -3.9%;
+	bottom:0%;
+	animation-name:drink_60;
+	animation-duration:1s; 
+} @keyframes drink_60{
+	0%{height:296px;}
+	100%{height:222px;}
+}
+.water_sixty_fill {
+	position:absolute;
+	/* background:#00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+	height:222px;
+	width:270px;
+	left: -3.9%;
+	bottom:0%;
+	animation-name:fill_60;
+	animation-duration:1s; 
+} @keyframes fill_60{
+	0%{height:148px;}
+	100%{height:222px;}
+}
+
+.water_fourty_drink {
+	position:absolute;
+	/* background:#00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+	height:148px;
+	width:270px;
+	left: -3.9%;
+	bottom:0%;
+	animation-name:drink_40;
+	animation-duration:1s; 
+} @keyframes drink_40{
+	0%{height:222px;}
+	100%{height:148px;}
+}
+.water_fourty_fill {
+	position:absolute;
+	/* background:#00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+	height:148px;
+	width:270px;
+	left: -3.9%;
+	bottom:0%;
+	animation-name:fill_40;
+	animation-duration:1s; 
+} @keyframes fill_40{
+	0%{height:74px;}
+	100%{height:148px;}
+}
+
+.water_tweenty_drink {
+    position:absolute;
+	/* background:#00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+	height:74px;
+	width:270px;
+	left: -3.9%;
+	bottom:0%;
+    animation-name:drink_20;
+	animation-duration:1s; 
+} @keyframes drink_20{
+	0%{height:148px;}
+	100%{height:74px;}
+}
+.water_tweenty_fill {
+    position:absolute;
+	/* background:#00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+	height:74px;
+	width:270px;
+	left: -3.9%;
+	bottom:0%;
+    animation-name:fill_20;
+	animation-duration:1s; 
+} @keyframes fill_20{
+	0%{height:0px;}
+	100%{height:74px;}
+}
+
+.water_zero_drink {
+	position:absolute;
+	/* background:#00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+	height:0px;
+	width:270px;
+	left: -3.9%;
+	bottom:0%;
+	animation-name:drink_00;
+	animation-duration:1s; 
+} @keyframes drink_00{
+	0%{height:74px;}
+	100%{height:0px;}
+}
+.water_zero_fill {
+	position:absolute;
+	/* background:#00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+	height:0px;
+	width:270px;
+	left: -3.9%;
+	bottom:0%;
+}
+
+.button {
+	position:absolute;
+	font-family:monospace;
+	background:#f7f7f7;
+	color:black;
+	cursor:pointer;
+	font-size:45px;
+	border-radius:10px;
+	padding-left:10px;
+	padding-right:10px;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+  text-transform: uppercase;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.2),0 4px 90px 0 rgba(0,0,0,0.19);
+}
+
+#drinkButton {
+	top: 70%;
+  left: -10%;
+}
+#settingsButton{
+  top: 90%;
+  left: -10%;
+}
+.button:hover {
+	background:#c0c0c0;
+}
+
+#fillButton {
+	top:75%;
+	left:100%;
+}
+
+/* Additional water levels */
+.water_ninety_drink {
+  position: absolute;
+  /* background: #00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+  height: 333px;
+  width: 270px;
+  left: -3.9%;
+  bottom: 0%;
+  animation-name: drink_90;
+  animation-duration: 1s;
+}
+@keyframes drink_90 {
+  0% { height: 370px; }
+  100% { height: 333px; }
+}
+.water_ninety_fill {
+  position: absolute;
+  /* background: #00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+  height: 333px;
+  width: 270px;
+  left: -3.9%;
+  bottom: 0%;
+  animation-name: fill_90;
+  animation-duration: 1s;
+}
+@keyframes fill_90 {
+  0% { height: 296px; }
+  100% { height: 333px; }
+}
+
+.water_seventy_drink {
+  position: absolute;
+  /* background: #00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+  height: 296px;
+  width: 270px;
+  left: -3.9%;
+  bottom: 0%;
+  animation-name: drink_70;
+  animation-duration: 1s;
+}
+@keyframes drink_70 {
+  0% { height: 333px; }
+  100% { height: 296px; }
+}
+.water_seventy_fill {
+  position: absolute;
+  /* background: #00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+  height: 296px;
+  width: 270px;
+  left: -3.9%;
+  bottom: 0%;
+  animation-name: fill_70;
+  animation-duration: 1s;
+}
+@keyframes fill_70 {
+  0% { height: 222px; }
+  100% { height: 296px; }
+}
+
+.water_fifty_drink {
+  position: absolute;
+  /* background: #00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+  height: 222px;
+  width: 270px;
+  left: -3.9%;
+  bottom: 0%;
+  animation-name: drink_50;
+  animation-duration: 1s;
+}
+@keyframes drink_50 {
+  0% { height: 296px; }
+  100% { height: 222px; }
+}
+.water_fifty_fill {
+  position: absolute;
+  /* background: #00c9ff; */
+  background-color: #fefefe;
+  background-image: linear-gradient(180deg, #fefefe 0%, #00a4e4 74%);
+  height: 222px;
+  width: 270px;
+  left: -3.9%;
+  bottom: 0%;
+  animation-name: fill_50;
+  animation-duration: 1s;
+}
+@keyframes fill_50 {
+  0% { height: 148px; }
+  100% { height: 222px; }
+}
+
+/* Ensure to keep existing styles for lower levels */
+
+.mobile-btns{
+  display: none;
+}
+
+.desktop-btns{
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  .button{
+    position: relative;
+  }
+  #drinkButton, #settingsButton{
+    top: unset;
+    left: unset;
+  }
+  #settingsButton{
+    top: 15px;
+  }
+  .mobile-btns{
+    display: block;
+  }
+  .desktop-btns{
+    display: none;
+  }
+}
+
+body{
+  background: #d3e6ff;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+.circle{
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  animation: ripple 15s infinite;
+  box-shadow: 0px 0px 1px 0px #508fb9;
+}
+
+.small{
+  width: 200px;
+  height: 200px;
+  left: -100px;
+  bottom: -100px;
+}
+
+.medium{
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  bottom: -200px;
+}
+
+.large{
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge{
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge{
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
+}
+
+.shade1{
+  opacity: 0.2;
+}
+.shade2{
+  opacity: 0.5;
+}
+
+.shade3{
+  opacity: 0.7;
+}
+
+.shade4{
+  opacity: 0.8;
+}
+
+.shade5{
+  opacity: 0.9;
+}
+
+@keyframes ripple{
+  0%{
+    transform: scale(0.8);
+  }
+  
+  50%{
+    transform: scale(1.2);
+  }
+  
+  100%{
+    transform: scale(0.8);
+  }
 }
