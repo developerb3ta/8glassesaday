@@ -442,7 +442,7 @@ h1, h2{
 
 body{
   background: #d3e6ff;
-  overflow: hidden;
+  /* overflow: hidden; */
   top: 0;
   left: 0;
   right: 0;
