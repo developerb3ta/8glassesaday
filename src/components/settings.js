@@ -21,7 +21,7 @@ const Settings = ({ setSettings }) => {
   return (
     <div>
       <h2>Settings</h2>
-      <label>
+      <label class="d-none">
         Number of glasses:
         <input type="number" value={glasses} onChange={(e) => setGlasses(e.target.value)} />
       </label>

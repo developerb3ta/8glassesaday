@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import Settings from './components/settings';
+import Settings from './components/settings';
 import Reminder from './components/reminder';
 import Completion from './components/completion';
 import { ToastContainer } from 'react-toastify'; // Import ToastContainer
