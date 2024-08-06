@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Settings from './components/settings';
+// import Settings from './components/settings';
 import Reminder from './components/reminder';
 import Completion from './components/completion';
 import { ToastContainer } from 'react-toastify'; // Import ToastContainer
@@ -29,10 +29,10 @@ const App = () => {
     <div className="App">
       <div class='ripple-background'>
       <div class='circle xxlarge shade1'></div>
-  <div class='circle xlarge shade2'></div>
-  <div class='circle large shade3'></div>
-  <div class='circle mediun shade4'></div>
-  <div class='circle small shade5'></div>
+      <div class='circle xlarge shade2'></div>
+      <div class='circle large shade3'></div>
+      <div class='circle mediun shade4'></div>
+      <div class='circle small shade5'></div>
       {view === 'settings' ? (
         <Settings setSettings={handleSettingsSave} />
       ) : glassesDrank < settings.glasses ? (
